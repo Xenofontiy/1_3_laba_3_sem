@@ -63,13 +63,13 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Class+interface\menu.cs" />
+    <Compile Include="Class+interface\food\menu.cs" />
     <Compile Include="Class+interface\food\sweets.cs" />
     <Compile Include="Class+interface\food\snak.cs" />
     <Compile Include="Class+interface\food\drink.cs" />
     <Compile Include="Class+interface\food\hot_food.cs" />
     <Compile Include="Class+interface\food\cold_food.cs" />
-    <Compile Include="Class+interface\Interface bludo.cs" />
+    <Compile Include="Class+interface\food\Interface bludo.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -101,5 +101,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

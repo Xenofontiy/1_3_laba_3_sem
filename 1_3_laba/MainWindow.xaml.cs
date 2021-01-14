@@ -23,22 +23,60 @@ namespace _1_3_laba
     /// </summary>
     public partial class MainWindow : Window
     {
-        int Number, all_price;
+        int all_price, Final_Price, Final_Time;
+        menu My_Menu; order My_Order;
+
+
+        public struct _order
+        {
+            public string name_Order { get; set; }
+            public int price_Order { get; set; }
+            public int pries_of_food_Order { get; set; }
+            public int number_Order { get; set; }
+
+
+        }
+        public struct order
+        {
+            public List<_order> Final_Order;
+
+        }
+
         public MainWindow()
         {
             InitializeComponent();
-            menu My_Menu = new menu();
 
-            this.DataContext = My_Menu;
-            List_menu.ItemsSource= My_Menu.list_of_order;
+        }
 
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            My_Menu = new menu();
+            List_menu.ItemsSource = My_Menu.list_of_order;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Number = Convert.ToInt32(Number_TextBox.Text);
-            all_price += Convert.ToInt32(Price_TextBox.Text) * Number;
+            _order _My_Order = new _order();
+
+            _My_Order.name_Order = Name_TextBox.Text;
+
+            _My_Order.number_Order = Convert.ToInt32(Number_TextBox.Text);
+
+            _My_Order.price_Order = Convert.ToInt32(Price_TextBox.Text)* _My_Order.number_Order;
+
+            _My_Order.pries_of_food_Order = Convert.ToInt32(Pries_of_food_TextBox.Text)* _My_Order.number_Order;
+
+            all_price += Convert.ToInt32(Price_TextBox.Text) * _My_Order.number_Order;
             All_price_TexBox.Text = Convert.ToString(all_price);
+            if (Final_Time < Convert.ToInt32(Time_TextBox.Text))
+                Final_Time = Convert.ToInt32(Time_TextBox.Text);
+
+            My_Order = new order();
+            My_Order.Final_Order = new List<_order>();
+            My_Order.Final_Order.Add(_My_Order);
+            List_Оrder_ListView.Items.Add (My_Order.Final_Order);
+
+
         }
 
     }
