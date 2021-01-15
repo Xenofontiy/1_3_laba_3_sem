@@ -25,7 +25,7 @@ namespace _1_3_laba
     {
         int all_price, all_time; int Order_list_number = 1;
         menu My_Menu; order My_Order;
-
+        List<List<string>> Order_list_save = new List<List<string>>();
 
         public struct _order
         {
@@ -89,13 +89,18 @@ namespace _1_3_laba
 
             if (My_Order.all_Order.Count != 0)
             {
-
                 List<string> Order_list = new List<string>();
                 foreach (_order _Order_list in My_Order.all_Order)
+                {
                     Order_list.Add("Блюдо: " + _Order_list.name_Order + ", цена: " + _Order_list.price_Order + "руб., себестоймость: " + _Order_list.pries_of_food_Order + "руб., " + _Order_list.number_Order + "шт.");
+                    
+                   // Test.Content = Convert.ToString(Order_list);
+                    Test.Content = "Блюдо: " + _Order_list.name_Order + ", цена: " + _Order_list.price_Order + "руб., себестоймость: " + _Order_list.pries_of_food_Order + "руб., " + _Order_list.number_Order + "шт.";
+                }
                 Order_list.Add("Итоговая цена: " + Convert.ToString(all_price) + "pуб., он будет готов через" + all_time + " мин.");
                 Order_list_number_ListView.Items.Add("Заказ " + Convert.ToString(Order_list_number));
                 Order_list_number++;
+                Order_list_save.Add(Order_list);
 
                 List_Оrder_ListView.Items.Clear();
                 My_Order.all_Order.Clear();
@@ -105,5 +110,21 @@ namespace _1_3_laba
 
         }
 
+        private void Order_list_number_ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            List_Оrder_ListView.ItemsSource = null;
+            My_Order.all_Order.Clear();
+            all_time = all_price = 0;
+            All_price_TexBox.Text = Convert.ToString(all_price);
+            List_Оrder_ListView.ItemsSource = Order_list_save[Order_list_number_ListView.SelectedIndex];
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            List_Оrder_ListView.ItemsSource = null;
+            My_Order.all_Order.Clear();
+            all_time = all_price = 0;
+            All_price_TexBox.Text = Convert.ToString(all_price);
+        }
     }
 }
