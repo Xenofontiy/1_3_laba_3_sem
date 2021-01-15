@@ -27,21 +27,7 @@ Title="Меню" Height="655" Width="1415" FontSize="18">
         </ListView>
 
         <ListView x:Name="List_Оrder_ListView" HorizontalAlignment="Left" Height="500" VerticalAlignment="Top" Width="350" Margin="798,50,0,0">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <WrapPanel>
-                        <TextBlock Text="Блюдо: "/>
-                        <TextBlock Text="{Binding name_Order}"/>
-                        <TextBlock Text=", цена: "/>
-                        <TextBlock Text="{Binding price_Order}"/>
-                        <TextBlock Text="руб., себестоймость: "/>
-                        <TextBlock Text="{Binding pries_of_food_Order}"/>
-                        <TextBlock Text="руб., "/>
-                        <TextBlock Text="{Binding number_Order}"/>
-                        <TextBlock Text="шт."/>
-                    </WrapPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
+            
         </ListView>
 
         <ListView x:Name="Order_list_number_ListView" HorizontalAlignment="Left" Height="296" VerticalAlignment="Top" Width="200" Margin="1174,254,0,0" SelectionChanged="Order_list_number_ListView_SelectionChanged">
@@ -66,7 +52,6 @@ Title="Меню" Height="655" Width="1415" FontSize="18">
         <Button Content="Завершение заказа" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Margin="572,428,0,0" Click="Button_Click_2"/>
         <Button Content="Показать меню" HorizontalAlignment="Left" VerticalAlignment="Top" Width="143" Margin="422,50,0,0" Click="Button_Click_1"/>
         <Button Content="Чистка" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="798,555,0,0" Click="Button_Click_3"/>
-        <Label x:Name="Test" Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="602,10,0,0"/>
     </Grid>
 
 </Window>
