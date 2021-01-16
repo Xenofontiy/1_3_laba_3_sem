@@ -59,6 +59,9 @@ namespace _1_3_laba
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            if (all_price==0)
+            List_Оrder_ListView.ItemsSource=null;
+
             try
             {
                 _My_Order.name_Order = Name_TextBox.Text;
@@ -99,10 +102,18 @@ namespace _1_3_laba
                 Order_list_number++;
                 Order_list_save.Add(Order_list);
 
-                List_Оrder_ListView.Items.Clear();
-                My_Order.all_Order.Clear();
-                all_time = all_price = 0;
-                All_price_TexBox.Text = Convert.ToString(all_price);
+                try {
+                    List_Оrder_ListView.Items.Clear();
+                    My_Order.all_Order.Clear();
+                    all_time = all_price = 0;
+                    All_price_TexBox.Text = Convert.ToString(all_price);
+                }
+                catch
+                {
+                    My_Order.all_Order.Clear();
+                    all_time = all_price = 0;
+                    All_price_TexBox.Text = Convert.ToString(all_price);
+                }
             }
 
         }

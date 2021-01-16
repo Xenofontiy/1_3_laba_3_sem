@@ -14,7 +14,7 @@ Title="Меню" Height="655" Width="1415" FontSize="18">
                         <TextBlock Text="Блюдо: "/>
                         <TextBlock Text="{Binding name}"/>
                         <TextBlock Text=", цена: "/>
-                        <TextBlock Text="{Binding price}"/>
+                        <TextBlock Text="{Binding pries}"/>
                         <TextBlock Text="руб., себестоймость: "/>
                         <TextBlock Text="{Binding pries_of_food}"/>
                         <TextBlock Text="руб., вес: "/>
@@ -35,16 +35,20 @@ Title="Меню" Height="655" Width="1415" FontSize="18">
         </ListView>
 
         <Label Content="Название" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="527,104,0,0" Width="90" FontSize="18" />
-        <Label Content="Стоймость" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="517,154,0,0" Width="100" FontSize="18" />
+        <Label Content="Стоимость" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="517,154,0,0" Width="100" FontSize="18" />
         <Label Content="Себестоймость" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="482,209,0,0"/>
         <Label Content="Время приготовления" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="422,258,0,0" Width="195" FontSize="18" />
-        <Label Content="Колличество" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="502,308,0,0" Width="115" FontSize="18" />
+        <Label Content="Количество" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="502,308,0,0" Width="115" FontSize="18" />
         <Label Content="Конечная цена" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="9.077,15.265" Margin="483,493,0,0"/>
 
-        <TextBox x:Name="Name_TextBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="{Binding SelectedItem.name, ElementName=List_menu}" VerticalAlignment="Top" Width="120" Margin="622,114,0,0" IsReadOnly="True" />
-        <TextBox x:Name="Price_TextBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="{Binding SelectedItem.pries, ElementName=List_menu}" VerticalAlignment="Top" Width="120" Margin="622,165,0,0" IsReadOnly="True"/>
-        <TextBox x:Name="Pries_of_food_TextBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="{Binding SelectedItem.pries_of_food, ElementName=List_menu}" VerticalAlignment="Top" Width="120" Margin="622,210,0,0"/>
-        <TextBox x:Name="Time_TextBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="{Binding SelectedItem.time_min, ElementName=List_menu}" VerticalAlignment="Top" Width="120" Margin="622,269,0,0" IsReadOnly="True"/>
+        <TextBox x:Name="Name_TextBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="{Binding SelectedItem.name, ElementName=List_menu}"
+                 VerticalAlignment="Top" Width="120" Margin="622,114,0,0" IsReadOnly="True" />
+        <TextBox x:Name="Price_TextBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="{Binding SelectedItem.pries, ElementName=List_menu}" 
+                 VerticalAlignment="Top" Width="120" Margin="622,165,0,0" IsReadOnly="True"/>
+        <TextBox x:Name="Pries_of_food_TextBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="{Binding SelectedItem.pries_of_food, ElementName=List_menu}"
+                 VerticalAlignment="Top" Width="120" Margin="622,210,0,0"/>
+        <TextBox x:Name="Time_TextBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="{Binding SelectedItem.time_min, ElementName=List_menu}"
+                 VerticalAlignment="Top" Width="120" Margin="622,269,0,0" IsReadOnly="True"/>
         <TextBox x:Name="Number_TextBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="120" Margin="622,319,0,0" />
         <TextBox x:Name="All_price_TexBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" Margin="622,494,0,0"/>
 
